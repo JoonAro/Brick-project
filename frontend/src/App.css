@@ -1,0 +1,55 @@
+/* Colour scheme variables */
+
+:root {
+    --lion: #aa8f66;
+    --earth-yellow: #d9ae69;
+    --persian-pink: #f378bb;
+    --hunter-green: #375940;
+    --brown: #953304;
+}
+
+/* Universal properties */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /* Offset the body with margin to have room for header */
+    margin-top: 75px;
+    height: 1000px;
+    border: 5px red solid;
+}
+
+/* Header section */
+
+.header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--earth-yellow);
+    height: 75px;
+}
+
+.header-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.75rem;
+}
+
+.icon-container {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .material-symbols-outlined {
+    font-size: 50px;
+}
