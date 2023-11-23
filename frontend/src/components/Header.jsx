@@ -1,4 +1,6 @@
-const Header = () => {
+import HamburgerMenu from "./HamburgerMenu";
+
+const Header = ({ updateMenu }) => {
     return (
         <header className="header">
             <div className="header-container">
@@ -13,9 +15,10 @@ const Header = () => {
                     <span className="material-symbols-outlined">
                         search
                     </span>
-                    <span className="material-symbols-outlined">
+                    <span onClick={() => updateMenu()} className={`material-symbols-outlined`} >
                         menu
                     </span>
+                    {/* <HamburgerMenu updateMenu={updateMenu} menuClass={menuClass}/> */}
                 </div>
             </div>
         </header>
