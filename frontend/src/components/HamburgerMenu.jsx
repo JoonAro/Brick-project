@@ -1,12 +1,16 @@
 const HamburgerMenu = ({updateMenu}) => {
 
     return (
-        <nav>
-
-        <span onClick={() => console.log(updateMenu)} className={`material-symbols-outlined`} >
-            menu
-        </span>
+        <main>
+        <nav className={`${menuClass}`}>
+          <ul>
+            <li>Home</li>
+            <li>Categories</li>
+            <li>Black Tea</li>
+            <li>Green Tea</li>
+          </ul>
         </nav>
+      </main>
     )
 
 }

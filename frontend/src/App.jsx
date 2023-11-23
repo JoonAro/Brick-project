@@ -21,8 +21,7 @@ function App() {
   return (
 
     <>
-      <Header updateMenu={updateMenu}
-      />
+      <Header updateMenu={updateMenu} />
       <main>
         <nav className={`${menuClass}`}>
           <ul>
