@@ -1,0 +1,7 @@
+NULL,Black tea, loose leaf black tea, 320, 5, 1, 250, black tea
+NULL,Green tea, loose leaf green tea, 430, 4, 1, 250, green tea
+NULL,White tea, loose leaf white tea, 430, 4, 1, 250, white tea
+NULL,Earl Grey, 100 teabags in box, 600, 10, 1, 500, black tea
+NULL,Pure Green Tea Twinings, 100 teabags in box, 650, 9, 1, 500, green tea
+NULL,Africa Rooibos Nordqvist, 100 teabags in box, 680, 9, 1, 500, special tea
+NULL,White Collection Nordqvist, 100 teabags in box, 700, 9, 1, 500, white tea
