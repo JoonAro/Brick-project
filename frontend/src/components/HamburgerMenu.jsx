@@ -1,17 +1,15 @@
-const HamburgerMenu = ({updateMenu}) => {
+const HamburgerMenu = ({ menuClass }) => {
 
-    return (
-        <main>
-        <nav className={`${menuClass}`}>
-          <ul>
-            <li>Home</li>
-            <li>Categories</li>
-            <li>Black Tea</li>
-            <li>Green Tea</li>
-          </ul>
-        </nav>
-      </main>
-    )
+  return (
+      <nav className={`${menuClass}`}>
+        <ul>
+          <li>Home</li>
+          <li>Categories</li>
+          <li>Black Tea</li>
+          <li>Green Tea</li>
+        </ul>
+      </nav>
+  )
 
 }
 
