@@ -60,11 +60,6 @@ body {
 
 /* Hamburger menu */
 
-main {
-  overflow: hidden;
-  border: blue 5px solid;
-}
-
 .menu {
   position: fixed;
   /* Offset from the header */
