@@ -1,7 +1,9 @@
 import "./App.css";
 import { useState } from "react";
-import Header from './components/Header'
-import Footer from './components/Footer';
+import Header from './routes/Header'
+import Hero from "./routes/Hero";
+import Footer from './routes/Footer';
+import HamburgerMenu from "./components/HamburgerMenu";
 
 function App() {
   const [menuClass, setMenuClass] = useState("menu hidden")
@@ -22,17 +24,8 @@ function App() {
 
     <>
       <Header updateMenu={updateMenu} />
-      <main>
-        <nav className={`${menuClass}`}>
-          <ul>
-            <li>Home</li>
-            <li>Categories</li>
-            <li>Black Tea</li>
-            <li>Green Tea</li>
-          </ul>
-        </nav>
-      </main>
-
+      <Hero />
+      <HamburgerMenu menuClass={menuClass} />
       <Footer />
     </>
   )
