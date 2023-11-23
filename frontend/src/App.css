@@ -7,6 +7,7 @@
   --brown: #953304;
   /* Font families */
   --palanquin: "Palanquin", sans-serif;
+  --shrinkhand: 'Shrikhand', serif;
 }
 
 /* Universal properties */
@@ -21,9 +22,8 @@ body {
   /* Offset the body with margin to have room for header */
   margin-top: 75px;
   background-color: var(--lion);
-  margin-top: 75px;
-  height: 1000px;
   border: 5px red solid;
+  overflow-x: hidden;
 }
 
 /* Header section */
@@ -62,16 +62,21 @@ body {
 
 main {
   overflow: hidden;
+  border: blue 5px solid;
 }
 
 .menu {
+  position: fixed;
+  /* Offset from the header */
+  top: 75px;
+  right: 0;
   overflow: hidden;
-  margin-left: auto;
   width: 60%;
-  height: 100vh;
+  z-index: 10;
+  height: 100%;
   background-color: var(--earth-yellow);
-  z-index: 1;
-
+  transform: translateX(0);
+  transition: all 250ms ease-in-out;
 }
 
 .menu li {
@@ -82,7 +87,7 @@ main {
 
 .menu.hidden {
   filter: blur(10px);
-  transform: translateX(110%);
+  transform: translateX(120%);
   transition: all 250ms ease-in-out;
 }
 
@@ -90,8 +95,28 @@ main {
   filter: blur(0);
   transform: translateX(0);
   transition: all 250ms ease-in-out;
-  position: fixed;
-  right: 0;
+}
+
+/* Hero */
+
+.hero {
+  height: calc(100vh - 75px);
+  font-family: var(--shrinkhand);
+  color: #fff;
+  z-index: 0;
+}
+
+.hero h1 {
+  text-align: center;
+  font-size: 4rem;
+}
+
+.hero-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: no-repeat center/cover url(assets/img/tea_cup.jpeg);
+  height: 100%;
 }
 
 /* Footer section */
