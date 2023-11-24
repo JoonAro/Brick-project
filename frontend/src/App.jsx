@@ -20,6 +20,9 @@ function App() {
       //Disable scrolling on body
       document.body.style.overflow = "hidden"
       setIsMenuClicked(true)
+      if (isSearchClicked) {
+        activateSearch()
+      }
     }
     else {
       setMenuClass("menu hidden")
@@ -34,6 +37,9 @@ function App() {
     if (!isSearchClicked) {
       setSearchClass("visible")
       setIsSearchClicked(true)
+      if (isMenuClicked) {
+        updateMenu()
+      }
     }
     else {
       setSearchClass("hidden")
