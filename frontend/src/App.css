@@ -7,6 +7,7 @@
   --brown: #953304;
   /* Font families */
   --palanquin: "Palanquin", sans-serif;
+  --shrinkhand: 'Shrikhand', serif;
 }
 
 /* Universal properties */
@@ -19,10 +20,10 @@
 
 body {
   /* Offset the body with margin to have room for header */
-  background-color: var(--lion);
   margin-top: 75px;
-  height: 1000px;
+  background-color: var(--lion);
   border: 5px red solid;
+  overflow-x: hidden;
 }
 
 /* Header section */
@@ -32,9 +33,10 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
   background-color: var(--earth-yellow);
   height: 75px;
+  z-index: 10;
 }
 
 .header-container {
@@ -54,6 +56,83 @@ body {
 
 .header .material-symbols-outlined {
   font-size: 50px;
+}
+
+/* Hamburger menu */
+
+.menu {
+  position: fixed;
+  /* Offset from the header */
+  top: 75px;
+  right: 0;
+  overflow: hidden;
+  width: 60%;
+  z-index: 10;
+  height: 100%;
+  background-color: var(--earth-yellow);
+  transform: translateX(0);
+  transition: all 250ms ease-in-out;
+}
+
+.menu li {
+  font-size: 1.25rem;
+  padding: 1rem;
+  list-style: none;
+}
+
+.menu.hidden {
+  filter: blur(10px);
+  transform: translateX(120%);
+  transition: all 250ms ease-in-out;
+}
+
+.menu.visible {
+  filter: blur(0);
+  transform: translateX(0);
+  transition: all 250ms ease-in-out;
+}
+
+/* Overlay */
+
+.overlay {
+  position: fixed;
+  transition: all 250ms ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay.active {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 250ms ease-in-out;
+  pointer-events: active;
+}
+
+.overlay.hidden {
+  background-color: rgba(0, 0, 0, 0);
+  transition: all 250ms ease-in-out;
+  pointer-events: none;
+}
+
+/* Hero */
+
+.hero {
+  height: calc(100vh - 75px);
+  font-family: var(--shrinkhand);
+  color: #fff;
+  z-index: 0;
+}
+
+.hero h1 {
+  text-align: center;
+  font-size: 4rem;
+}
+
+.hero-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: no-repeat center/cover url(assets/img/tea_cup.jpeg);
+  height: 100%;
 }
 
 /* Footer section */
