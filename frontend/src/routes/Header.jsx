@@ -1,4 +1,4 @@
-const Header = ({ updateMenu }) => {
+const Header = ({ updateMenu, activateSearch }) => {
     return (
         <header className="header">
             <div className="header-container">
@@ -10,7 +10,7 @@ const Header = ({ updateMenu }) => {
                     <span className="material-symbols-outlined">
                         shopping_cart
                     </span>
-                    <span className="material-symbols-outlined">
+                    <span onClick= {()=> activateSearch()}className="material-symbols-outlined">
                         search
                     </span>
                     <span onClick={() => updateMenu()} className={`material-symbols-outlined`} >
