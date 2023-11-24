@@ -92,6 +92,39 @@ body {
   transition: all 250ms ease-in-out;
 }
 
+.search-container {
+  position: fixed;
+  top: 75px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--earth-yellow);
+  height: 30px;
+  padding: 0.15rem
+}
+
+.search-container input {
+  border: var(--brown) 1px solid;
+  font-family: var(--palanquin);
+  padding: 0.15rem;
+  font-size: 1.125rem;
+  border-radius: 5px;
+}
+
+.search-container.hidden {
+  filter: blur(10px);
+  transform: translateY(-120%);
+  transition: all 250ms ease-in-out;
+}
+
+.search-container.visible {
+  filter: blur(0);
+  transform: translateY(0);
+  transition: all 250ms ease-in-out;
+}
+
+
 /* Overlay */
 
 .overlay {
