@@ -1,13 +1,13 @@
 :root {
   /* Colour scheme variables */
-  --lion: #D8BCA3;
+  --lion: #d8bca3;
   --earth-yellow: #d9ae69;
   --persian-pink: #f378bb;
   --hunter-green: #375940;
   --brown: #953304;
   /* Font families */
   --palanquin: "Palanquin", sans-serif;
-  --shrinkhand: 'Shrikhand', serif;
+  --shrinkhand: "Shrikhand", serif;
 }
 
 /* Universal properties */
@@ -101,7 +101,7 @@ body {
   width: 100%;
   background-color: var(--earth-yellow);
   height: 30px;
-  padding: 0.15rem
+  padding: 0.15rem;
 }
 
 .search-container input {
@@ -123,7 +123,6 @@ body {
   transform: translateY(0);
   transition: all 250ms ease-in-out;
 }
-
 
 /* Overlay */
 
@@ -187,6 +186,31 @@ body {
 }
 
 .footer button:active {
-    filter: brightness(150%);
-    box-shadow: 0 0 5px var(--persian-pink);
+  filter: brightness(150%);
+  box-shadow: 0 0 5px var(--persian-pink);
 }
+/*Card*/
+
+.card {
+  display: grid;
+  padding: 5px;  
+  background-color: var(--earth-yellow);
+  width: 360px;
+}
+
+.card img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.card footer {
+  background-color: var(--hunter-green);
+  color: #fff;
+  height: 20px;
+  width: 100%;
+  text-align: center;
+  font-family:  var(--palanquin);
+}
+
+
+
