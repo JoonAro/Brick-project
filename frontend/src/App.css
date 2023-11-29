@@ -193,7 +193,7 @@ body {
 
 .card {
   display: grid;
-  padding: 5px;  
+  padding: 10px;
   background-color: var(--earth-yellow);
   width: 360px;
 }
@@ -206,11 +206,9 @@ body {
 .card footer {
   background-color: var(--hunter-green);
   color: #fff;
-  height: 20px;
+  height: 30px;
   width: 100%;
   text-align: center;
-  font-family:  var(--palanquin);
+  font-family: var(--palanquin);
+  padding-bottom: 5px;
 }
-
-
-
