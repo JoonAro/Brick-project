@@ -24,15 +24,16 @@ app.get("/products", (req, res) => {
 })
 
 app.post("/products", (req, res) => {
-    const q = "INSERT INTO products (`product_name`, `description`, `product_price`, `amount`, `instock`, `weight`, `category`) VALUES(?)";
+    const q = "INSERT INTO products (`id`, `product_name`, `description`, `product_price`, `amount`, `instock`, `weight`, `category_id`) VALUES(?)";
     const values = [
+        req.body.id,
         req.body.product_name,
         req.body.description,
         req.body.product_price,
         req.body.amount,
         req.body.instock,
         req.body.weight,
-        req.body.category,
+        req.body.category_id,
     ];
 
     db.query(q, [values], (err, data) => {
