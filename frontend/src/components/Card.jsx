@@ -1,4 +1,3 @@
-
 export default function Card({ imageURL, teaType }) {
   return (
     <div className="card">
