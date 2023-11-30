@@ -4,6 +4,7 @@ import Header from "./routes/Header";
 import Hero from "./routes/Hero";
 import Footer from "./routes/Footer";
 import HamburgerMenu from "./components/HamburgerMenu";
+import AddToCart from "./components/AddToCart";
 import Search from "./components/Search";
 import Card from "./components/Card";
 
