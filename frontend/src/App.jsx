@@ -6,6 +6,7 @@ import Footer from "./routes/Footer";
 import HamburgerMenu from "./components/HamburgerMenu";
 import Search from "./components/Search";
 import Card from "./components/Card";
+import PlusMinusButton from "./components/PlusminusButton";
 
 function App() {
   const [menuClass, setMenuClass] = useState("menu hidden");
@@ -57,6 +58,8 @@ function App() {
         <Hero />
         <Search searchClass={searchClass} />
         <HamburgerMenu menuClass={menuClass} />
+        <PlusMinusButton />
+
         <Footer />
       </div>
     </>
