@@ -167,6 +167,21 @@ body {
   height: 100%;
 }
 
+Product categories
+
+  .categories-main-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .categories-main-container h2 {
+    font-family: var(--shrinkhand);
+    color: var(--brown);
+    font-size: 3rem;
+  }
+
+  .category-cards-container {}
+
 /* Footer section */
 
 .footer {
