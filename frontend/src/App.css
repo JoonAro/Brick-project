@@ -74,10 +74,21 @@ body {
   transition: all 250ms ease-in-out;
 }
 
-.menu li {
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--palanquin);
+}
+
+.menu a {
+  color: var(--brown);
   font-size: 1.25rem;
   padding: 1rem;
   list-style: none;
+}
+
+.menu a {
+  text-decoration: none;
 }
 
 .menu.hidden {
