@@ -1,5 +1,6 @@
 import express from "express"
 import mysql from "mysql"
+import cors from 'cors'
 const app = express()
 
 const db = mysql.createConnection({
@@ -10,6 +11,7 @@ const db = mysql.createConnection({
 })
 
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
     res.json("Hello this is the backend")
@@ -24,15 +26,16 @@ app.get("/products", (req, res) => {
 })
 
 app.post("/products", (req, res) => {
-    const q = "INSERT INTO products (`product_name`, `description`, `product_price`, `amount`, `instock`, `weight`, `category`) VALUES(?)";
+    const q = "INSERT INTO products (`id`, `product_name`, `description`, `product_price`, `amount`, `instock`, `weight`, `category_id`) VALUES(?)";
     const values = [
+        req.body.id,
         req.body.product_name,
         req.body.description,
         req.body.product_price,
         req.body.amount,
         req.body.instock,
         req.body.weight,
-        req.body.category,
+        req.body.category_id,
     ];
 
     db.query(q, [values], (err, data) => {
