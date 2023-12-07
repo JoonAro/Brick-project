@@ -51,7 +51,7 @@ function App() {
       searchClass={searchClass} 
       menuClass={menuClass}/>,
       children: [
-        { path: '/', element:        <Home 
+        { path: '/', element: <Home 
         updateMenu={updateMenu}
         overlayClass={overlayClass}
       />  }
