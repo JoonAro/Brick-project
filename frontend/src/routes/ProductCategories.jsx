@@ -2,7 +2,6 @@ import categories from '../assets/categories.json'
 import Card from '../components/Card'
 
 const ProductCategories = () => {
-    console.log(categories)
     return (
         <div className="categories-main-container">
             <h2>Tea types</h2>
