@@ -54,7 +54,14 @@ function App() {
         { path: '/', element: <Home 
         updateMenu={updateMenu}
         overlayClass={overlayClass}
-      />  }
+      />  },
+      {path: '/black_tea'},
+      {path: '/green_tea'},
+      {path: '/jasmin_tea'},
+      {path: '/white_tea'},
+      {path: '/herbal_tea'},
+      {path: '/special_tea'},
+      {path: '/show_all'}
       ]
     }
   ])
