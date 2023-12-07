@@ -1,24 +1,31 @@
-const Header = ({ updateMenu, activateSearch }) => {
+import Search from "../components/Search";
+import HamburgerMenu from "../components/HamburgerMenu";
+
+const Header = ({ updateMenu, activateSearch, searchClass, menuClass }) => {
     return (
-        <header className="header">
-            <div className="header-container">
-                {/* Placeholder logo */}
-                <span className="material-symbols-outlined">
-                    emoji_food_beverage
-                </span>
-                <div className="icon-container">
+        <>
+            <header className="header">
+                <div className="header-container">
+                    {/* Placeholder logo */}
                     <span className="material-symbols-outlined">
-                        shopping_cart
+                        emoji_food_beverage
                     </span>
-                    <span onClick= {()=> activateSearch()}className="material-symbols-outlined">
-                        search
-                    </span>
-                    <span onClick={() => updateMenu()} className={`material-symbols-outlined`} >
-                        menu
-                    </span>
+                    <div className="icon-container">
+                        <span className="material-symbols-outlined">
+                            shopping_cart
+                        </span>
+                        <span onClick={() => activateSearch()} className="material-symbols-outlined">
+                            search
+                        </span>
+                        <span onClick={() => updateMenu()} className={`material-symbols-outlined`} >
+                            menu
+                        </span>
+                    </div>
                 </div>
-            </div>
-        </header>
+            </header>
+            <Search searchClass={searchClass} />
+            <HamburgerMenu menuClass={menuClass} />
+        </>
     )
 }
 
