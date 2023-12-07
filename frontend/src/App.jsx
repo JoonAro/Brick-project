@@ -1,13 +1,8 @@
 import "./App.css";
 import { useState } from "react";
-import Header from "./routes/Header";
-import Hero from "./routes/Hero";
-import Footer from "./routes/Footer";
-import HamburgerMenu from "./components/HamburgerMenu";
-import AddToCart from "./components/AddToCart";
-import Search from "./components/Search";
-import Card from "./components/Card";
-import ProductCategories from "./routes/ProductCategories";
+import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import Root from "./routes/Root"
+import Home from "./routes/Home";
 
 function App() {
   const [menuClass, setMenuClass] = useState("menu hidden");
@@ -48,20 +43,25 @@ function App() {
     }
   };
 
+  const router = createBrowserRouter([
+    {
+      path: '/', element: <Root 
+      updateMenu={updateMenu} 
+      activateSearch={activateSearch}
+      searchClass={searchClass} 
+      menuClass={menuClass}/>,
+      children: [
+        { path: '/', element: <Home 
+        updateMenu={updateMenu}
+        overlayClass={overlayClass}
+      />  }
+      ]
+    }
+  ])
+
   return (
     <>
-      <div className="main-container">
-        <div
-          className={`overlay ${overlayClass}`}
-          onClick={() => updateMenu()}
-        ></div>
-        <Header updateMenu={updateMenu} activateSearch={activateSearch} />
-        <Hero />
-        <Search searchClass={searchClass} />
-        <HamburgerMenu menuClass={menuClass} />
-        <ProductCategories />
-        <Footer />
-      </div>
+     <RouterProvider router={router}/>
     </>
   );
 }
