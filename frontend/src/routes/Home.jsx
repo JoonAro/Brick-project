@@ -2,7 +2,6 @@ import Hero from "./Hero"
 import ProductCategories from "./ProductCategories"
 
 
-
 const Home = ({ updateMenu, overlayClass }) => {
   return (
     <div className="main-container">
