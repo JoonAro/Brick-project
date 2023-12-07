@@ -189,6 +189,20 @@ body {
   filter: brightness(150%);
   box-shadow: 0 0 5px var(--persian-pink);
 }
+.add-to-cart-button {
+  color: #fff;
+  background-color: var(--brown);
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-family: var(--palanquin);
+}
+
+.add-to-cart-button:active {
+  filter: brightness(150%);
+  box-shadow: 0 0 5px var(--persian-pink);
+}
 /*CARD*/
 .card {
   display: flex;
