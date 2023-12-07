@@ -1,13 +1,9 @@
 import "./App.css";
 import { useState } from "react";
-import Header from "./routes/Header";
-import Hero from "./routes/Hero";
-import Footer from "./routes/Footer";
-import HamburgerMenu from "./components/HamburgerMenu";
-import AddToCart from "./components/AddToCart";
-import Search from "./components/Search";
-import Card from "./components/Card";
-import PlusMinusButton from "./components/PlusminusButton";
+import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import Root from "./routes/Root";
+import Home from "./routes/Home";
+import CategoryHero from "./routes/CategoryHero";
 
 function App() {
   const [menuClass, setMenuClass] = useState("menu hidden");
@@ -48,21 +44,32 @@ function App() {
     }
   };
 
+  const router = createBrowserRouter([
+    {
+      path: '/', element: <Root 
+      updateMenu={updateMenu} 
+      activateSearch={activateSearch}
+      searchClass={searchClass} 
+      menuClass={menuClass}/>,
+      children: [
+        { path: '/', element: <Home 
+        updateMenu={updateMenu}
+        overlayClass={overlayClass}
+      />  },
+      {path: '/black_tea', element: <CategoryHero categoryName="Black tea" imageURL={"https://images.unsplash.com/photo-1433891248364-3ce993ff0e92?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}/>},
+      {path: '/green_tea'},
+      {path: '/jasmin_tea'},
+      {path: '/white_tea'},
+      {path: '/herbal_tea'},
+      {path: '/special_tea'},
+      {path: '/show_all'}
+      ]
+    }
+  ])
+
   return (
     <>
-      <div className="main-container">
-        <div
-          className={`overlay ${overlayClass}`}
-          onClick={() => updateMenu()}
-        ></div>
-        <Header updateMenu={updateMenu} activateSearch={activateSearch} />
-        <Hero />
-        <Search searchClass={searchClass} />
-        <HamburgerMenu menuClass={menuClass} />
-        <PlusMinusButton />
-
-        <Footer />
-      </div>
+     <RouterProvider router={router}/>
     </>
   );
 }

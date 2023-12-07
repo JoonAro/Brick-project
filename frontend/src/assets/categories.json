@@ -1,0 +1,9 @@
+[
+  { "name": "Black tea", "pathname": "black_tea" },
+  { "name": "Green tea", "pathname": "green_tea" },
+  { "name": "Jasmin tea", "pathname": "jasmin_tea" },
+  { "name": "White tea", "pathname": "white_tea" },
+  { "name": "Herbal tea", "pathname": "herbal_tea" },
+  { "name": "Special tea", "pathname": "special_tea" },
+  { "name": "Show all", "pathname":"show_all"}
+]
