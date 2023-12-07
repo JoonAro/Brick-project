@@ -22,7 +22,6 @@ body {
   /* Offset the body with margin to have room for header */
   margin-top: 75px;
   background-color: var(--lion);
-  border: 5px red solid;
   overflow-x: hidden;
 }
 
@@ -205,6 +204,28 @@ body {
 
 .category-cards-container a {
   text-decoration: none;
+}
+
+/* Category hero */
+
+.category-hero {
+  display: flex;
+  justify-content: center;
+}
+
+.category-hero h1  {
+  position: absolute;
+  top: 50%;
+  font-family: var(--shrinkhand);
+  color: #fff;
+  text-align: center;
+  font-size: 4rem;
+}
+
+img.category-hero-img-container{
+  height: calc(100vh - 75px);
+  width: 100%;
+  object-fit: cover;
 }
 
 /* Footer section */
