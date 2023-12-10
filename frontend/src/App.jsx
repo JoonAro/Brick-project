@@ -1,8 +1,9 @@
 import "./App.css";
 import { useState } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
-import Root from "./routes/Root"
+import Root from "./routes/Root";
 import Home from "./routes/Home";
+import CategoryHero from "./routes/CategoryHero";
 
 function App() {
   const [menuClass, setMenuClass] = useState("menu hidden");
@@ -54,7 +55,14 @@ function App() {
         { path: '/', element: <Home 
         updateMenu={updateMenu}
         overlayClass={overlayClass}
-      />  }
+      />  },
+      {path: '/black_tea', element: <CategoryHero categoryName="Black tea" imageURL={"https://images.unsplash.com/photo-1433891248364-3ce993ff0e92?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}/>},
+      {path: '/green_tea'},
+      {path: '/jasmin_tea'},
+      {path: '/white_tea'},
+      {path: '/herbal_tea'},
+      {path: '/special_tea'},
+      {path: '/show_all'}
       ]
     }
   ])
