@@ -169,28 +169,28 @@ body {
 
 /* Product categories */
 
-  .categories-main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.categories-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .categories-main-container h2 {
-    font-family: var(--shrinkhand);
-    color: var(--brown);
-    font-size: 2.5rem;
-    padding: 1rem;
-  }
+.categories-main-container h2 {
+  font-family: var(--shrinkhand);
+  color: var(--brown);
+  font-size: 2.5rem;
+  padding: 1rem;
+}
 
-  .category-cards-container {
-    display: flex;
-    justify-content: center;
-    flex-flow: wrap;
-    width: 90%;
-    gap: 2rem;
-    padding-bottom: 3rem;
-  }
+.category-cards-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  width: 90%;
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
 
 /* Footer section */
 
@@ -251,4 +251,77 @@ body {
   width: 100%;
   text-align: center;
   font-family: var(--palanquin);
+}
+
+/* productCard*/
+
+.productHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.productCard {
+  font-family: var(--palanquin);
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 205px;
+  margin-top: 20px;
+  background-color: var(--earth-yellow);
+}
+
+.imgHolder {
+  object-fit: fill;
+  width: 150px;
+  height: 167px;
+  background-image: url("https://images.unsplash.com/photo-1433891248364-3ce993ff0e92?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+.imgAndDesc {
+  display: flex;
+  position: relative;
+}
+
+.bottomCard {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  height: 38px;
+  background-color: #375940;
+}
+
+/* .bottomCard {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  height: 39px;
+} */
+
+/* .halfCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #375940;
+  width: 150px;
+  height: 39px;
+} */
+
+.descBox {
+  padding: 5px;
+}
+
+.priceHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  height: 50px;
+  width: 70px;
+  background-color: var(--hunter-green);
+  border-radius: 50%;
+  color: white;
 }

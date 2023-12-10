@@ -1,3 +1,4 @@
+import Products from "./products"
 import Hero from "./Hero"
 import ProductCategories from "./ProductCategories"
 

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
-import Card from '../components/Card';
+import ProductCard from '../components/ProductCard';
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
@@ -9,6 +9,7 @@ const Products = () => {
             try {
                 const res = await axios.get("http://localhost:8082/products")
                 setProducts(res.data);
+                //console.log(res.data);
             } catch (err) {
                 console.log(err)
             }
@@ -16,7 +17,7 @@ const Products = () => {
         fetchProducts()
     }, []);
     /*     Card
-        key = { product.id }
+        key = { product.product_name }
         title = { product.product_name }
         desc = { product.description }
         price = { product.product_price }
@@ -27,18 +28,20 @@ const Products = () => {
 
     return <>
 
-        <div className="categories-main-container">
-            <h2>Products</h2>
-            <div className='category-cards-container'>
-                {products.map(product => (
-                    <Card
-                        key={product.id}
-                        teaType={product.category_id}
-                        imageURL={"https://images.unsplash.com/photo-1433891248364-3ce993ff0e92?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
-                    />
-                ))}
-            </div >
+        <div className="productHolder">
+            <h1>Products</h1>
+            {products.map(product => (
+                <ProductCard
+                    key={product.product_name}
+                    title={product.product_name}
+                    teaType={product.category_id}
+                    desc={product.description}
+                    imageURL={"https://images.unsplash.com/photo-1433891248364-3ce993ff0e92?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+                    price={product.product_price}
+                />
+            ))}
         </div>
+
     </>
 }
 
