@@ -1,9 +1,8 @@
-import Products from "./products"
 import Hero from "./Hero"
 import ProductCategories from "./ProductCategories"
 
 
-const Home = ({ updateMenu, overlayClass }) => {
+const Home = ({ updateMenu, overlayClass, productsToShow }) => {
   return (
     <div className="main-container">
       <div
@@ -11,7 +10,7 @@ const Home = ({ updateMenu, overlayClass }) => {
         onClick={() => updateMenu()}
       ></div>
       <Hero />
-      <ProductCategories />
+      <ProductCategories productsToShow={productsToShow} />
     </div>
   )
 }
