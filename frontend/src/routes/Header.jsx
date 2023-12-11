@@ -1,7 +1,7 @@
 import Search from "../components/Search";
 import HamburgerMenu from "../components/HamburgerMenu";
 
-const Header = ({ updateMenu, activateSearch, searchClass, menuClass }) => {
+const Header = ({ updateMenu, activateSearch, searchClass, menuClass, categoryDisplay }) => {
     return (
         <>
             <header className="header">
@@ -24,7 +24,7 @@ const Header = ({ updateMenu, activateSearch, searchClass, menuClass }) => {
                 </div>
             </header>
             <Search searchClass={searchClass} />
-            <HamburgerMenu menuClass={menuClass} />
+            <HamburgerMenu menuClass={menuClass} categoryDisplay={categoryDisplay} />
         </>
     )
 }

@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 import categories from '../assets/categories.json'
 import Card from '../components/Card'
 
-const ProductCategories = ({ productsToShow, }) => {
+const ProductCategories = ({ productsToShow }) => {
     return (
         <div className="categories-main-container">
             <h2>Tea types</h2>
