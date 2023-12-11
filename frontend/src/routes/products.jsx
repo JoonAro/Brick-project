@@ -5,13 +5,11 @@ import ProductCard from '../components/ProductCard';
 import CategoryHero from './CategoryHero';
 const Products = ({ categoryDisplay, categoryName, imageURL }) => {
     const [products, setProducts] = useState([]);
-    console.log(categoryDisplay);
     useEffect(() => {
         const fetchProducts = async () => {
             try {
                 const res = await axios.get("http://localhost:8082/products")
                 setProducts(res.data);
-                console.log(res.data)
             } catch (err) {
                 console.log(err)
             }

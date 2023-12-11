@@ -4,7 +4,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import Root from "./routes/Root";
 import Home from "./routes/Home";
 import CategoryHero from "./routes/CategoryHero";
-import Products from "./routes/Products";
+import Products from "./routes/products";
 
 function App() {
   const [menuClass, setMenuClass] = useState("menu hidden");
@@ -12,7 +12,6 @@ function App() {
   const [overlayClass, setOverlayClass] = useState("hidden");
   const [isSearchClicked, setIsSearchClicked] = useState(false);
   const [isMenuClicked, setIsMenuClicked] = useState(false);
-  const [products, setProducts] = useState([]);
   const categoryDisplay = useRef();
 
   const updateMenu = () => {
