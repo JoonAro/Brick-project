@@ -71,12 +71,13 @@ function App() {
         activateSearch={activateSearch}
         searchClass={searchClass}
         menuClass={menuClass}
-        categoryDisplay={categoryDisplay} />,
+        categoryDisplay={categoryDisplay} 
+        overlayClass={overlayClass}
+        />,
       children: [
         {
           path: '/', element: <Home
             updateMenu={updateMenu}
-            overlayClass={overlayClass}
             productsToShow={productsToShow}
           />
         },

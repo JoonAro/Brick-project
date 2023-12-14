@@ -1,10 +1,14 @@
 import Search from "../components/Search";
 import HamburgerMenu from "../components/HamburgerMenu";
 
-const Header = ({ updateMenu, activateSearch, searchClass, menuClass, categoryDisplay }) => {
+const Header = ({ updateMenu, activateSearch, searchClass, menuClass, categoryDisplay, overlayClass }) => {
     return (
         <>
             <header className="header">
+                <div
+                    className={`overlay ${overlayClass}`}
+                    onClick={() => updateMenu()}
+                ></div>
                 <div className="header-container">
                     {/* Placeholder logo */}
                     <span className="material-symbols-outlined">

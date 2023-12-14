@@ -1,7 +1,7 @@
 import Header from "./Header";
 import { Outlet } from "react-router-dom";
 
-const Root = ({ updateMenu, activateSearch, searchClass, menuClass, categoryDisplay }) => {
+const Root = ({ updateMenu, activateSearch, searchClass, menuClass, categoryDisplay, overlayClass }) => {
     return (
         <>
             <Header
@@ -9,8 +9,9 @@ const Root = ({ updateMenu, activateSearch, searchClass, menuClass, categoryDisp
                 activateSearch={activateSearch}
                 searchClass={searchClass}
                 menuClass={menuClass}
-                categoryDisplay={categoryDisplay} />
-
+                categoryDisplay={categoryDisplay} 
+                overlayClass={overlayClass}
+                />
             <Outlet />
         </>
     )
