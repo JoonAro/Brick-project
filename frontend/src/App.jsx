@@ -11,26 +11,28 @@ import { fakeProducts } from "../fakeProducts";
 function App() {
   const [menuClass, setMenuClass] = useState("menu hidden");
   const [searchClass, setSearchClass] = useState("hidden");
+  const [cartClass, setCartClass] = useState("hidden");
   const [overlayClass, setOverlayClass] = useState("hidden");
   const [isSearchClicked, setIsSearchClicked] = useState(false);
+  const [isCartClicked, setIsCartClicked] = useState(false);
   const [isMenuClicked, setIsMenuClicked] = useState(false);
-  const [products, setProducts] = useState(fakeProducts);
+  const [products, setProducts] = useState([]);
   const [toCart, setToCart] = useState([]);
   const [carts, setCarts] = useState([]);
   const categoryDisplay = useRef();
   const cartProduct = useRef([]);
-  /*
+
   useEffect(() => {
-         const fetchProducts = async () => {
-          try {
-            const res = await axios.get("http://localhost:8082/products")
-            setProducts(res.data);
-          } catch (err) {
-            console.log(err)
-          }
-        }
-        fetchProducts()
-      }, []); */
+    const fetchProducts = async () => {
+      try {
+        const res = await axios.get("http://localhost:8082/products")
+        setProducts(res.data);
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    fetchProducts()
+  }, []);
   /*  useEffect(() => {
      const fetchCarts = async () => {
        try {
@@ -47,7 +49,7 @@ function App() {
     numb--;
     cartProduct.current = products[numb];
     setCarts((prevCarts => [...prevCarts, cartProduct.current]));
-    console.log(products);
+    console.log(carts);
   }
   const updateMenu = () => {
     if (!isMenuClicked) {
@@ -75,9 +77,27 @@ function App() {
       if (isMenuClicked) {
         updateMenu();
       }
+    } else if (!isCartClicked) {
+      setCartClass("visible");
+      setIsCartClicked(true);
+      if (isMenuClicked) {
+        updateMenu();
+      }
     } else {
       setSearchClass("hidden");
       setIsSearchClicked(false);
+    }
+  };
+  const activateCart = () => {
+    if (!isSearchClicked) {
+      setCartClass("visible");
+      setIsCartClicked(true);
+      if (isMenuClicked) {
+        updateMenu();
+      }
+    } else {
+      setCartClass("hidden");
+      setIsCartClicked(false);
     }
   };
 
@@ -89,6 +109,7 @@ function App() {
       path: '/', element: <Root
         updateMenu={updateMenu}
         activateSearch={activateSearch}
+        activateCart={activateCart}
         searchClass={searchClass}
         menuClass={menuClass}
         categoryDisplay={categoryDisplay} />,
