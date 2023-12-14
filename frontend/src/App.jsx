@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import Root from "./routes/Root";
 import Home from "./routes/Home";
 import Products from "./routes/products";
+import CartProducts from "./routes/CartProducts";
 import axios from 'axios';
 import { fakeProducts } from "../fakeProducts";
 import categories from './assets/categories.json'
@@ -19,6 +20,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [toCart, setToCart] = useState([]);
   const [carts, setCarts] = useState([]);
+  const [cartHasProducts, setCartHasProducts] = useState(false);
   const categoryDisplay = useRef();
   const cartProduct = useRef([]);
 
@@ -33,22 +35,12 @@ function App() {
     }
     fetchProducts()
   }, []);
-  /*  useEffect(() => {
-     const fetchCarts = async () => {
-       try {
-         const res = await axios.get("http://localhost:8082/carts")
-         setCarts(res.data);
-       } catch (err) {
-         console.log(err)
-       }
-     }
-     fetchCarts()
-   }, []); */
 
   const getCartGoing = (numb) => {
     numb--;
     cartProduct.current = products[numb];
     setCarts((prevCarts => [...prevCarts, cartProduct.current]));
+    setCartHasProducts(true);
     console.log(carts);
   }
   const updateMenu = () => {
@@ -61,6 +53,9 @@ function App() {
       if (isSearchClicked) {
         activateSearch();
       }
+      if (isCartClicked) {
+        activateCart();
+      }
     } else {
       setMenuClass("menu hidden");
       setOverlayClass("hidden");
@@ -72,14 +67,10 @@ function App() {
 
   const activateSearch = () => {
     if (!isSearchClicked) {
+      setCartClass("hidden");
+      setIsCartClicked(false);
       setSearchClass("visible");
       setIsSearchClicked(true);
-      if (isMenuClicked) {
-        updateMenu();
-      }
-    } else if (!isCartClicked) {
-      setCartClass("visible");
-      setIsCartClicked(true);
       if (isMenuClicked) {
         updateMenu();
       }
@@ -89,11 +80,18 @@ function App() {
     }
   };
   const activateCart = () => {
-    if (!isSearchClicked) {
-      setCartClass("visible");
-      setIsCartClicked(true);
-      if (isMenuClicked) {
+    if (!isCartClicked) {
+      if (isSearchClicked) {
+        activateSearch();
+        setCartClass("visible");
+        setIsCartClicked(true);
+      }
+      else if (isMenuClicked) {
         updateMenu();
+      }
+      else {
+        setCartClass("visible");
+        setIsCartClicked(true);
       }
     } else {
       setCartClass("hidden");
@@ -111,9 +109,12 @@ function App() {
         activateSearch={activateSearch}
         activateCart={activateCart}
         searchClass={searchClass}
+        cartClass={cartClass}
         menuClass={menuClass}
         categoryDisplay={categoryDisplay}
         overlayClass={overlayClass}
+        carts={carts}
+        CartProducts={CartProducts}
       />,
       children: [
         {
@@ -122,13 +123,13 @@ function App() {
             productsToShow={productsToShow}
           />
         },
-        { path: '/black_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} categoryName="Black tea" imageURL={categories[0].imageURL} />) },
-        { path: '/green_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} categoryName="Green tea" imageURL={categories[1].imageURL} />) },
+        { path: '/black_tea', element: (<Products products={products} getCartGoing={getCartGoing} categoryDisplay={categoryDisplay} categoryName="Black tea" imageURL={categories[0].imageURL} />) },
+        { path: '/green_tea', element: (<Products products={products} getCartGoing={getCartGoing} categoryDisplay={categoryDisplay} categoryName="Green tea" imageURL={categories[1].imageURL} />) },
         { path: '/jasmin_tea' },
-        { path: '/white_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} categoryName="White tea" imageURL={categories[3].imageURL} />) },
-        { path: '/herbal_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} categoryName="Herbal tea" imageURL={categories[4].imageURL} />) },
-        { path: '/special_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} categoryName="Special tea" imageURL={categories[5].imageURL} />) },
-        { path: '/teapots', element: (<Products products={products} categoryDisplay={categoryDisplay} categoryName="Teapots" imageURL={categories[6].imageURL} />) }
+        { path: '/white_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="White tea" imageURL={categories[3].imageURL} />) },
+        { path: '/herbal_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Herbal tea" imageURL={categories[4].imageURL} />) },
+        { path: '/special_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Special tea" imageURL={categories[5].imageURL} />) },
+        { path: '/teapots', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Teapots" imageURL={categories[6].imageURL} />) }
       ]
     }
   ])
