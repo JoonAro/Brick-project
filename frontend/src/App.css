@@ -213,7 +213,7 @@ body {
   justify-content: center;
 }
 
-.category-hero h1  {
+.category-hero h1 {
   position: absolute;
   top: 50%;
   font-family: var(--shrinkhand);
@@ -222,7 +222,7 @@ body {
   font-size: 4rem;
 }
 
-img.category-hero-img-container{
+img.category-hero-img-container {
   height: calc(100vh - 75px);
   width: 100%;
   object-fit: cover;
@@ -250,6 +250,7 @@ img.category-hero-img-container{
   filter: brightness(150%);
   box-shadow: 0 0 5px var(--persian-pink);
 }
+
 .add-to-cart-button {
   color: #fff;
   background-color: var(--brown);
@@ -264,6 +265,7 @@ img.category-hero-img-container{
   filter: brightness(150%);
   box-shadow: 0 0 5px var(--persian-pink);
 }
+
 /*CARD*/
 .card {
   display: flex;
@@ -285,6 +287,7 @@ img.category-hero-img-container{
   text-align: center;
   font-family: var(--palanquin);
 }
+
 /*PLUSMINUS BUTTON*/
 .plusminus {
   padding: 0.5rem;
@@ -298,6 +301,7 @@ img.category-hero-img-container{
   margin-top: 2px;
   margin-bottom: 2px;
 }
+
 .content {
   color: white;
   display: flex;
@@ -312,6 +316,7 @@ img.category-hero-img-container{
   padding-bottom: 8px;
   padding-top: 8px;
 }
+
 .minus {
   color: white;
   display: flex;
@@ -322,6 +327,7 @@ img.category-hero-img-container{
   line-height: normal;
   justify-content: left;
 }
+
 .plus {
   color: white;
   display: flex;
@@ -330,4 +336,78 @@ img.category-hero-img-container{
   font-size: 14px;
   line-height: normal;
   justify-content: right;
+}
+
+
+/* productCard*/
+
+.productHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.productCard {
+  font-family: var(--palanquin);
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 205px;
+  margin-top: 20px;
+  background-color: var(--earth-yellow);
+}
+
+.imgHolder {
+  object-fit: fill;
+  width: 150px;
+  height: 167px;
+  background-image: url("https://images.unsplash.com/photo-1433891248364-3ce993ff0e92?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+.imgAndDesc {
+  display: flex;
+  position: relative;
+}
+
+.bottomCard {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  height: 38px;
+  background-color: #375940;
+}
+
+/* .bottomCard {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  height: 39px;
+} */
+
+/* .halfCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #375940;
+  width: 150px;
+  height: 39px;
+} */
+
+.descBox {
+  padding: 5px;
+}
+
+.priceHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  height: 50px;
+  width: 70px;
+  background-color: var(--hunter-green);
+  border-radius: 50%;
+  color: white;
 }

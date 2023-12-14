@@ -1,9 +1,36 @@
 [
-  { "name": "Black tea", "pathname": "black_tea" },
-  { "name": "Green tea", "pathname": "green_tea" },
-  { "name": "Jasmin tea", "pathname": "jasmin_tea" },
-  { "name": "White tea", "pathname": "white_tea" },
-  { "name": "Herbal tea", "pathname": "herbal_tea" },
-  { "name": "Special tea", "pathname": "special_tea" },
-  { "name": "Show all", "pathname":"show_all"}
+  {
+    "name": "Black tea",
+    "pathname": "black_tea",
+    "id": 1
+  },
+  {
+    "name": "Green tea",
+    "pathname": "green_tea",
+    "id": 2
+  },
+  {
+    "name": "Jasmin tea",
+    "pathname": "jasmin_tea"
+  },
+  {
+    "name": "White tea",
+    "pathname": "white_tea",
+    "id": 3
+  },
+  {
+    "name": "Herbal tea",
+    "pathname": "herbal_tea",
+    "id": 5
+  },
+  {
+    "name": "Special tea",
+    "pathname": "special_tea",
+    "id": 4
+  },
+  {
+    "name": "Teapots",
+    "pathname": "teapots",
+    "id": 6
+  }
 ]
