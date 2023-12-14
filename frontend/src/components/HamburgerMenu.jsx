@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom"
-import categories from "../assets/categories.json"
 
 const HamburgerMenu = ({ menuClass, categoryDisplay }) => {
 

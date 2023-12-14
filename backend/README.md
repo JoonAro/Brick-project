@@ -16,4 +16,4 @@ CREATE TABLE IF NOT EXISTS products ( id INT AUTO_INCREMENT PRIMARY KEY, product
 # load data to products ATTENTION! copy your own local path to the products.txt /Users/.../products.txt
 LOAD DATA LOCAL INFILE './products.txt' INTO TABLE products FIELDS TERMINATED BY ',';
 
-TESTING MERGE
+CREATE TABLE IF NOT EXISTS carts ( id INT PRIMARY KEY, product_name VARCHAR(255) NOT NULL, description TEXT, product_price INT NOT NULL, amount INT NOT NULL, instock BOOL NOT NULL, weight INT, category_id INT);

@@ -378,22 +378,6 @@ img.category-hero-img-container {
   background-color: #375940;
 }
 
-/* .bottomCard {
-  display: flex;
-  justify-content: space-between;
-  color: white;
-  height: 39px;
-} */
-
-/* .halfCard {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #375940;
-  width: 150px;
-  height: 39px;
-} */
-
 .descBox {
   padding: 5px;
 }

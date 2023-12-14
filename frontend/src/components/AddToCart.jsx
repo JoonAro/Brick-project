@@ -1,8 +1,6 @@
-const AddToCart = () => {
+const AddToCart = ({ getCartGoing, id }) => {
     return (
-        <>
-        <button className="add-to-cart-button">Add to cart</button>
-        </>
+        <button className="add-to-cart-button" onClick={() => getCartGoing(id)}>Add to cart</button>
     )
 }
 

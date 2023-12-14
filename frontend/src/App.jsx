@@ -14,8 +14,10 @@ function App() {
   const [isSearchClicked, setIsSearchClicked] = useState(false);
   const [isMenuClicked, setIsMenuClicked] = useState(false);
   const [products, setProducts] = useState([]);
+  const [toCart, setToCart] = useState([]);
+  const [carts, setCarts] = useState([]);
   const categoryDisplay = useRef();
-
+  const cartProduct = useRef([]);
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -27,7 +29,24 @@ function App() {
     }
     fetchProducts()
   }, []);
+  /*  useEffect(() => {
+     const fetchCarts = async () => {
+       try {
+         const res = await axios.get("http://localhost:8082/carts")
+         setCarts(res.data);
+       } catch (err) {
+         console.log(err)
+       }
+     }
+     fetchCarts()
+   }, []); */
 
+  const getCartGoing = (numb) => {
+    numb--;
+    cartProduct.current = products[numb];
+    setCarts((prevCarts => [...prevCarts, cartProduct.current]));
+    console.log(carts);
+  }
   const updateMenu = () => {
     if (!isMenuClicked) {
       setMenuClass("menu visible");
@@ -62,7 +81,6 @@ function App() {
 
   const productsToShow = (category) => {
     categoryDisplay.current = category.id;
-    console.log(productsToShow);
   }
   const router = createBrowserRouter([
     {
@@ -80,13 +98,13 @@ function App() {
             productsToShow={productsToShow}
           />
         },
-        { path: '/black_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} categoryName="Black tea" imageURL={"https://images.unsplash.com/photo-1433891248364-3ce993ff0e92?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} />) },
-        { path: '/green_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} categoryName="Green tea" imageURL={"https://images.unsplash.com/photo-1582793988951-9aed5509eb97?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} />) },
+        { path: '/black_tea', element: (<Products products={products} getCartGoing={getCartGoing} categoryDisplay={categoryDisplay} categoryName="Black tea" imageURL={"https://images.unsplash.com/photo-1433891248364-3ce993ff0e92?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} />) },
+        { path: '/green_tea', element: (<Products products={products} getCartGoing={getCartGoing} categoryDisplay={categoryDisplay} categoryName="Green tea" imageURL={"https://images.unsplash.com/photo-1582793988951-9aed5509eb97?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} />) },
         { path: '/jasmin_tea' },
-        { path: '/white_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} categoryName="White tea" imageURL={"https://images.unsplash.com/photo-1484836443634-3d3fd80edccf?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} />) },
-        { path: '/herbal_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} categoryName="Herbal tea" imageURL={"https://images.unsplash.com/photo-1514733670139-4d87a1941d55?q=80&w=1756&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} />) },
-        { path: '/special_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} categoryName="Special tea" imageURL={"https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fHRlYXxlbnwwfHwwfHx8MA%3D%3D"} />) },
-        { path: '/teapots', element: (<Products products={products} categoryDisplay={categoryDisplay} categoryName="Teapots" imageURL={"https://images.unsplash.com/uploads/141156683569128f190a0/6efc090d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} />) }
+        { path: '/white_tea', element: (<Products products={products} getCartGoing={getCartGoing} categoryDisplay={categoryDisplay} categoryName="White tea" imageURL={"https://images.unsplash.com/photo-1484836443634-3d3fd80edccf?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} />) },
+        { path: '/herbal_tea', element: (<Products products={products} getCartGoing={getCartGoing} categoryDisplay={categoryDisplay} categoryName="Herbal tea" imageURL={"https://images.unsplash.com/photo-1514733670139-4d87a1941d55?q=80&w=1756&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} />) },
+        { path: '/special_tea', element: (<Products products={products} getCartGoing={getCartGoing} categoryDisplay={categoryDisplay} categoryName="Special tea" imageURL={"https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fHRlYXxlbnwwfHwwfHx8MA%3D%3D"} />) },
+        { path: '/teapots', element: (<Products products={products} getCartGoing={getCartGoing} categoryDisplay={categoryDisplay} categoryName="Teapots" imageURL={"https://images.unsplash.com/uploads/141156683569128f190a0/6efc090d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} />) }
       ]
     }
   ])

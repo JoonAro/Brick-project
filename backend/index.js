@@ -24,6 +24,13 @@ app.get("/products", (req, res) => {
         return res.json(data)
     })
 })
+app.get("/carts", (req, res) => {
+    const q = "SELECT * FROM carts"
+    db.query(q, (err, data) => {
+        if (err) return res.json(err)
+        return res.json(data)
+    })
+})
 
 app.post("/products", (req, res) => {
     const q = "INSERT INTO products (`id`, `product_name`, `description`, `product_price`, `amount`, `instock`, `weight`, `category_id`) VALUES(?)";

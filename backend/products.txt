@@ -7,3 +7,4 @@ NULL,Africa Rooibos Nordqvist, 100 teabags in box, 680, 9, 1, 500, 4
 NULL,White Collection Nordqvist, 100 teabags in box, 700, 9, 1, 500, 3
 NULL,Teapot, White, 4990, 5, 1, 500, 6
 NULL,Herbal tea TeaBros, 50 bags in box, 640, 5, 1, 250, 5
+NULL,Black tea Lipton, 100 teabags in box, 520, 5, 1, 250,1
