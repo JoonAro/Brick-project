@@ -88,6 +88,8 @@ function App() {
       }
       else if (isMenuClicked) {
         updateMenu();
+        setCartClass("visible");
+        setIsCartClicked(true);
       }
       else {
         setCartClass("visible");
