@@ -2,12 +2,14 @@
   {
     "name": "Black tea",
     "pathname": "black_tea",
-    "id": 1
+    "id": 1,
+    "imageURL":"https://images.unsplash.com/photo-1433891248364-3ce993ff0e92?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     "name": "Green tea",
     "pathname": "green_tea",
-    "id": 2
+    "id": 2,
+    "imageURL":"https://images.unsplash.com/photo-1582793988951-9aed5509eb97?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     "name": "Jasmin tea",
@@ -16,21 +18,25 @@
   {
     "name": "White tea",
     "pathname": "white_tea",
-    "id": 3
+    "id": 3,
+    "imageURL":"https://images.unsplash.com/photo-1484836443634-3d3fd80edccf?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     "name": "Herbal tea",
     "pathname": "herbal_tea",
-    "id": 5
+    "id": 5,
+    "imageURL":"https://images.unsplash.com/photo-1514733670139-4d87a1941d55?q=80&w=1756&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     "name": "Special tea",
     "pathname": "special_tea",
-    "id": 4
+    "id": 4,
+    "imageURL":"https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fHRlYXxlbnwwfHwwfHx8MA%3D%3D"
   },
   {
     "name": "Teapots",
     "pathname": "teapots",
-    "id": 6
+    "id": 6,
+    "imageURL":"https://images.unsplash.com/uploads/141156683569128f190a0/6efc090d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   }
 ]
