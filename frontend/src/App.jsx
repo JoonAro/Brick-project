@@ -6,6 +6,7 @@ import Home from "./routes/Home";
 import CategoryHero from "./routes/CategoryHero";
 import Products from "./routes/products";
 import axios from 'axios';
+import { fakeProducts } from "../fakeProducts";
 
 function App() {
   const [menuClass, setMenuClass] = useState("menu hidden");
@@ -13,22 +14,23 @@ function App() {
   const [overlayClass, setOverlayClass] = useState("hidden");
   const [isSearchClicked, setIsSearchClicked] = useState(false);
   const [isMenuClicked, setIsMenuClicked] = useState(false);
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(fakeProducts);
   const [toCart, setToCart] = useState([]);
   const [carts, setCarts] = useState([]);
   const categoryDisplay = useRef();
   const cartProduct = useRef([]);
+  /*
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const res = await axios.get("http://localhost:8082/products")
-        setProducts(res.data);
-      } catch (err) {
-        console.log(err)
-      }
-    }
-    fetchProducts()
-  }, []);
+         const fetchProducts = async () => {
+          try {
+            const res = await axios.get("http://localhost:8082/products")
+            setProducts(res.data);
+          } catch (err) {
+            console.log(err)
+          }
+        }
+        fetchProducts()
+      }, []); */
   /*  useEffect(() => {
      const fetchCarts = async () => {
        try {
@@ -45,7 +47,7 @@ function App() {
     numb--;
     cartProduct.current = products[numb];
     setCarts((prevCarts => [...prevCarts, cartProduct.current]));
-    console.log(carts);
+    console.log(products);
   }
   const updateMenu = () => {
     if (!isMenuClicked) {
