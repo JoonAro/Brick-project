@@ -141,7 +141,9 @@ body {
   top: 75px;
   left: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   background-color: var(--earth-yellow);
   height: 400px;
@@ -164,7 +166,7 @@ body {
 .productInCartSignal {
   display: block;
   position: relative;
-  top: 18px;
+  top: 17px;
   left: 10px;
   width: 16px;
   height: 8px;
@@ -175,7 +177,8 @@ body {
 .signal {
   height: 20px;
   width: 20px;
-  background: rgb(40, 174, 30);
+  background: var(--hunter-green);
+  /* background: rgb(40, 174, 30); */
   transform: rotateX(135deg);
 }
 
@@ -187,14 +190,22 @@ body {
   align-items: center;
 }
 
+.cartFlex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .cartProductCard {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-family: var(--palanquin);
-  width: 350px;
+  width: 340px;
   height: 55px;
   margin-top: 5px;
   background-color: var(--lion);
+  font-size: large;
 }
 
 .cartImg img {
@@ -203,6 +214,29 @@ body {
   /*   
   background-image: url("https://images.unsplash.com/photo-1433891248364-3ce993ff0e92?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
   background-size: cover;
+}
+
+/* TotalPriceComp */
+
+.totalPriceComp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  font-family: var(--palanquin);
+  font-size: x-large;
+}
+
+.checkoutButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 200px;
+  background-color: var(--hunter-green);
+  font-family: var(--palanquin);
+  color: white;
+  font-size: xx-large;
 }
 
 /* Overlay */
@@ -372,8 +406,21 @@ img.category-hero-img-container {
   display: flex;
   margin-top: 2px;
   margin-bottom: 2px;
+
 }
 
+/* .plusminus {
+  padding: 0.5rem;
+  margin: 0 0.25rem;
+  width: 90px;
+  height: 30px;
+  color: brown;
+  border-radius: 5px;
+  background: var(--Brown, #953304);
+  display: flex;
+  margin-top: 2px;
+  margin-bottom: 2px;
+} */
 .content {
   color: white;
   display: flex;
@@ -382,6 +429,7 @@ img.category-hero-img-container {
   margin-right: 10px;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
   vertical-align: top;
   padding-right: 16px;
   padding-left: 16px;

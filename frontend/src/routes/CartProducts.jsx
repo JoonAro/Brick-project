@@ -1,7 +1,8 @@
 import CartProductCard from '../components/CartProductCard';
+
 const CartProducts = ({ categoryDisplay, categoryName, imageURL, carts }) => {
 
-    return <>
+    return (
         <div className="cartProductHolder">
             {carts.map(product => (
                 <CartProductCard
@@ -14,8 +15,7 @@ const CartProducts = ({ categoryDisplay, categoryName, imageURL, carts }) => {
                 />
             ))}
         </div>
-
-    </>
+    )
 }
 
 export default CartProducts;

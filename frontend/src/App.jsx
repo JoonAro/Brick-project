@@ -18,12 +18,12 @@ function App() {
   const [isCartClicked, setIsCartClicked] = useState(false);
   const [isMenuClicked, setIsMenuClicked] = useState(false);
   const [products, setProducts] = useState([]);
-  const [toCart, setToCart] = useState([]);
   const [carts, setCarts] = useState([]);
   const [cartHasProducts, setCartHasProducts] = useState(false);
+  const [totalPrice, setTotalPrice] = useState(0);
   const categoryDisplay = useRef();
   const cartProduct = useRef([]);
-
+  const totalToModify = useRef();
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -36,12 +36,26 @@ function App() {
     fetchProducts()
   }, []);
 
-  const getCartGoing = (numb) => {
+  const getCartGoing = (numb, price) => {
     numb--;
-    cartProduct.current = products[numb];
-    setCarts((prevCarts => [...prevCarts, cartProduct.current]));
-    setCartHasProducts(true);
+    if (!carts[numb]) {
+      cartProduct.current = products[numb];
+      setCarts((prevCarts => [...prevCarts, cartProduct.current]));
+      setCartHasProducts(true);
+    }
+    else {
+      console.log(carts);
+      //update number of this product in cart later
+      //carts needs total in cart that cannot be more than amount
+    }
     console.log(carts);
+    updateTotal(price);
+  }
+  const updateTotal = (price) => {
+    totalToModify.current = totalPrice;
+    totalToModify.current += price;
+    console.log(totalToModify);
+    setTotalPrice(totalToModify.current)
   }
   const updateMenu = () => {
     if (!isMenuClicked) {
@@ -117,6 +131,7 @@ function App() {
         overlayClass={overlayClass}
         carts={carts}
         CartProducts={CartProducts}
+        totalPrice={totalPrice}
       />,
       children: [
         {
@@ -125,13 +140,13 @@ function App() {
             productsToShow={productsToShow}
           />
         },
-        { path: '/black_tea', element: (<Products products={products} getCartGoing={getCartGoing} categoryDisplay={categoryDisplay} categoryName="Black tea" imageURL={categories[0].imageURL} />) },
-        { path: '/green_tea', element: (<Products products={products} getCartGoing={getCartGoing} categoryDisplay={categoryDisplay} categoryName="Green tea" imageURL={categories[1].imageURL} />) },
+        { path: '/black_tea', element: (<Products products={products} getCartGoing={getCartGoing} categoryDisplay={categoryDisplay} categoryName="Black tea" imageURL={categories[0].imageURL} updateTotal={updateTotal} />) },
+        { path: '/green_tea', element: (<Products products={products} getCartGoing={getCartGoing} categoryDisplay={categoryDisplay} categoryName="Green tea" imageURL={categories[1].imageURL} updateTotal={updateTotal} />) },
         { path: '/jasmin_tea' },
-        { path: '/white_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="White tea" imageURL={categories[3].imageURL} />) },
-        { path: '/herbal_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Herbal tea" imageURL={categories[4].imageURL} />) },
-        { path: '/special_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Special tea" imageURL={categories[5].imageURL} />) },
-        { path: '/teapots', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Teapots" imageURL={categories[6].imageURL} />) }
+        { path: '/white_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="White tea" imageURL={categories[3].imageURL} updateTotal={updateTotal} />) },
+        { path: '/herbal_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Herbal tea" imageURL={categories[4].imageURL} updateTotal={updateTotal} />) },
+        { path: '/special_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Special tea" imageURL={categories[5].imageURL} updateTotal={updateTotal} />) },
+        { path: '/teapots', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Teapots" imageURL={categories[6].imageURL} updateTotal={updateTotal} />) }
       ]
     }
   ])

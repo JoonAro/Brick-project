@@ -1,5 +1,5 @@
 import AddToCart from './AddToCart'
-const ProductCard = ({ id, title, desc, price, getCartGoing }) => {
+const ProductCard = ({ id, title, desc, price, getCartGoing, updateTotal }) => {
     const decimalPrice = (price / 100).toFixed(2);
     return (
         <div className="productCard">
@@ -14,7 +14,7 @@ const ProductCard = ({ id, title, desc, price, getCartGoing }) => {
             </div>
             <div className='bottomCard'>
                 <p>{title}</p>
-                <AddToCart id={id} getCartGoing={getCartGoing} />
+                <AddToCart id={id} getCartGoing={getCartGoing} updateTotal={updateTotal} price={price} />
             </div>
         </div>
     )
