@@ -4,17 +4,12 @@ const CartProductCard = ({ id, title, price, category_id }) => {
     return (<>
         <div className="cartProductCard">
             <p>{title}</p>
-            <p>{decimalPrice}€</p>
-
-        </div>
-        <div className="plusminus">
-            <span className="minus">
-                -
-            </span>
-            <span className="content">1</span>
-            <span className="plus">
-                +
-            </span>
+            <p id='priceInCart'>{decimalPrice}€</p>
+            <div className="removeFromCart">
+                <p id='addButton'>+</p>
+                <p id='amountInCart'>2</p>
+                <p id="closeButton">-</p>
+            </div>
         </div>
     </>
     )
