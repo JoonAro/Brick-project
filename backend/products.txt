@@ -1,13 +1,3 @@
-NULL,Black tea, loose leaf black tea, 320, 5,,1, 250, 1
-NULL,Green tea, loose leaf green tea, 430, 4,,1, 250, 2
-NULL,White tea, loose leaf white tea, 430, 4,,1, 250, 3
-NULL,Earl Grey, 100 teabags in box, 600, 10,,1, 500, 1
-NULL,Pure Green Tea Twinings, 100 teabags in box, 650, 9,,1, 500, 2
-NULL,Africa Rooibos Nordqvist, 100 teabags in box, 680, 9,,1, 500, 4
-NULL,White Collection Nordqvist, 100 teabags in box, 700, 9,,1, 500, 3
-NULL,Teapot, White, 4990, 5,,1, 500, 6
-NULL,Herbal tea TeaBros, 50 bags in box, 640, 5,,1, 250, 5
-NULL,Black tea Lipton, 100 teabags in box, 520, 5,,1, 250,1
 NULL,Black Tea Classic, Premium loose leaf black tea, 450, 15,,1, 300, 1
 NULL,English Breakfast, Full-bodied black tea blend, 520, 20,,1, 350, 1
 NULL,Assam Harmony, Single estate loose leaf black tea, 580, 18,,1, 250, 1

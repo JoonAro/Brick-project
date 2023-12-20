@@ -15,6 +15,5 @@ LOAD DATA LOCAL INFILE './categories.txt' INTO TABLE categories FIELDS TERMINATE
 CREATE TABLE IF NOT EXISTS products ( id INT AUTO_INCREMENT PRIMARY KEY, product_name VARCHAR(255) NOT NULL, description TEXT, product_price INT NOT NULL, amount INT NOT NULL, incart INT DEFAULT 0,instock BOOL NOT NULL, weight INT, category_id INT, CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES categories(category_id));
 # load data to products ATTENTION! copy your own local path to the products.txt /Users/.../products.txt
 LOAD DATA LOCAL INFILE './products.txt' INTO TABLE products FIELDS TERMINATED BY ',';
-LOAD DATA LOCAL INFILE '/Users/s2301192/Desktop/BC/Brick-project/backend/products.txt' INTO TABLE products FIELDS TERMINATED BY ',';
 
 CREATE TABLE IF NOT EXISTS carts ( id INT PRIMARY KEY, product_name VARCHAR(255) NOT NULL, description TEXT, product_price INT NOT NULL, amount INT NOT NULL, instock BOOL NOT NULL, incart INT DEFAULT 0,weight INT, category_id INT);

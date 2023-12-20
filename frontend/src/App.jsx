@@ -37,21 +37,23 @@ function App() {
   const getCartGoing = (numb, price) => {
     numb--;
     const updatedProduct = { ...products[numb] };
-    updatedProduct.incart += 1;
-    updatedProduct.amount -= 1;
-    cartProduct.current = updatedProduct;
+    //if carts doesn't have this product yet
     if (!carts.some(product => product.id === updatedProduct.id)) {
+      updatedProduct.incart += 1;
+      updatedProduct.amount -= 1;
+      cartProduct.current = updatedProduct;
       setCarts((prevCarts => [...prevCarts, cartProduct.current]));
       setCartHasProducts(true);
     }
+    //if cart has the product it only updates incart and amount
     else {
       const updatedCarts = carts.map(product => product.id === updatedProduct.id ? { ...product, incart: product.incart + 1, amount: product.amount - 1 } : product);
       setCarts(updatedCarts);
     }
     updateTotal(price);
   }
-  //update number of this product in cart later
   //carts needs total in cart that cannot be more than amount
+  //updates total price in cart
   const updateTotal = (price) => {
     totalToModify.current = totalPrice;
     totalToModify.current += price;
@@ -141,10 +143,10 @@ function App() {
         },
         { path: '/black_tea', element: (<Products products={products} getCartGoing={getCartGoing} categoryDisplay={categoryDisplay} categoryName="Black tea" imageURL={categories[0].imageURL} updateTotal={updateTotal} />) },
         { path: '/green_tea', element: (<Products products={products} getCartGoing={getCartGoing} categoryDisplay={categoryDisplay} categoryName="Green tea" imageURL={categories[1].imageURL} updateTotal={updateTotal} />) },
-        { path: '/white_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="White tea" imageURL={categories[3].imageURL} updateTotal={updateTotal} />) },
-        { path: '/herbal_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Herbal tea" imageURL={categories[4].imageURL} updateTotal={updateTotal} />) },
-        { path: '/special_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Special tea" imageURL={categories[5].imageURL} updateTotal={updateTotal} />) },
-        { path: '/teapots', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Teapots" imageURL={"https://images.unsplash.com/uploads/141156683569128f190a0/6efc090d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} updateTotal={updateTotal} />) }
+        { path: '/white_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="White tea" imageURL={categories[2].imageURL} updateTotal={updateTotal} />) },
+        { path: '/herbal_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Herbal tea" imageURL={categories[3].imageURL} updateTotal={updateTotal} />) },
+        { path: '/special_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Special tea" imageURL={categories[4].imageURL} updateTotal={updateTotal} />) },
+        { path: '/teapots', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Teapots" imageURL={categories[5].imageURL} updateTotal={updateTotal} />) }
       ]
     }
   ])

@@ -1,6 +1,7 @@
 import Search from "../components/Search";
 import HamburgerMenu from "../components/HamburgerMenu";
 import Cart from "../components/Cart";
+import { NavLink } from 'react-router-dom';
 const Header = ({ updateMenu, activateSearch, searchClass, menuClass, activateCart, cartClass, categoryDisplay, overlayClass, carts, CartProducts, totalPrice, getCartGoing }) => {
     return (
         <>
@@ -11,9 +12,11 @@ const Header = ({ updateMenu, activateSearch, searchClass, menuClass, activateCa
                 ></div>
                 <div className="header-container">
                     {/* Placeholder logo */}
-                    <span className="material-symbols-outlined">
-                        emoji_food_beverage
-                    </span>
+                    <NavLink to={'/'}>
+                        <span className="material-symbols-outlined">
+                            emoji_food_beverage
+                        </span>
+                    </NavLink>
                     <div className="icon-container">
                         <span onClick={() => activateCart()} className="material-symbols-outlined">
                             <div className="productInCartSignal"><div className={carts.length === 0 ? "" : "signal"}></div></div>
