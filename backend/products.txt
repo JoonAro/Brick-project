@@ -1,0 +1,30 @@
+NULL,Black Tea Classic, Premium loose leaf black tea, 450, 15,,1, 300, 1
+NULL,English Breakfast, Full-bodied black tea blend, 520, 20,,1, 350, 1
+NULL,Assam Harmony, Single estate loose leaf black tea, 580, 18,,1, 250, 1
+NULL,Earl Grey Reserve, Black tea with bergamot essence, 650, 22,,1, 400, 1
+NULL,Keemun Imperial, Chinese black tea with a sweet aroma, 480, 16,,1, 300, 1
+NULL,Green Tea Delight, Fresh loose leaf green tea, 400, 15,,1, 250, 2
+NULL,Sencha Supreme, Japanese green tea, 520, 18,,1, 300, 2
+NULL,Dragonwell Reserve, Chinese green tea with chestnut flavor, 600, 20,,1, 350, 2
+NULL,Jasmine Pearls, Green tea scented with jasmine flowers, 480, 16,,1, 250, 2
+NULL,Moroccan Mint, Green tea with mint leaves, 450, 15,,1, 300, 2
+NULL,White Tea Elegance, Delicate loose leaf white tea, 550, 20,,1, 250, 3
+NULL,Silver Needle, Premium white tea buds, 680, 25,,1, 350, 3
+NULL,Bai Mu Dan, White peony tea with floral notes, 600, 22,,1, 300, 3
+NULL,Snow Dragon, Rare white tea from Fujian, 720, 28,,1, 400, 3
+NULL,White Peony Reserve, White tea with a hint of peach, 650, 24,,1, 350, 3
+NULL,Chai Sensation, Spiced black tea blend, 480, 18,,1, 250, 4
+NULL,Oolong Harmony, Traditional Chinese oolong tea, 600, 20,,1, 300, 4
+NULL,Pu-erh Majesty, Aged fermented tea from Yunnan, 750, 25,,1, 400, 4
+NULL,Darjeeling Dream, Indian black tea with muscatel notes, 580, 22,,1, 350, 4
+NULL,Matcha Magic, Japanese powdered green tea, 680, 28,,1, 350, 4
+NULL,Chamomile Bliss, Calming herbal tea, 450, 15,,1, 250, 5
+NULL,Peppermint Burst, Refreshing mint herbal tea, 400, 18,,1, 300, 5
+NULL,Lavender Serenity, Floral herbal blend with lavender, 520, 20,,1, 350, 5
+NULL,Rooibos Sunset, South African red tea, 480, 16,,1, 300, 5
+NULL,Hibiscus Delight, Fruity hibiscus herbal tea, 550, 22,,1, 350, 5
+NULL,Teapot Elegance, White porcelain teapot, 3500, 10,,1, 800, 6
+NULL,Japanese Kyusu, Traditional clay teapot, 4200, 12,,1, 1000, 6
+NULL,Cast Iron Tetsubin, Japanese iron teapot, 4800, 15,,1, 1200, 6
+NULL,Glass Teapot Harmony, Modern glass teapot, 3200, 8,,1, 600, 6
+NULL,Ceramic Gaiwan, Chinese lidded bowl for tea, 3800, 10,,1, 800, 6
