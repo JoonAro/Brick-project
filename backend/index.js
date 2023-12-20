@@ -24,49 +24,6 @@ app.get("/products", (req, res) => {
         return res.json(data)
     })
 })
-app.get("/carts", (req, res) => {
-    const q = "SELECT * FROM carts"
-    db.query(q, (err, data) => {
-        if (err) return res.json(err)
-        return res.json(data)
-    })
-})
-
-app.post("/products", (req, res) => {
-    const q = "INSERT INTO products (`id`, `product_name`, `description`, `product_price`, `amount`, `instock`, `weight`, `category_id`) VALUES(?)";
-    const values = [
-        req.body.id,
-        req.body.product_name,
-        req.body.description,
-        req.body.product_price,
-        req.body.amount,
-        req.body.instock,
-        req.body.weight,
-        req.body.category_id,
-    ];
-    app.put("/products/:id", (req, res) => {
-        const productId = req.params.id;
-        const q = "UPDATE products set amount = amount + 1, incart = incart - 1 where id = ?"
-        "UPDATE books SET `title` = ?, `desc` = ?, `price` = ?, `cover` = ? WHERE id = ?";
-
-        const values = [
-            req.body.amount,
-            req.body.incart,
-
-        ];
-
-        db.query(q, [...values, productId], (err, data) => {
-            if (err) return res.json(err);
-            return res.json("product status has been updated succesfully.");
-        })
-    });
-
-    db.query(q, [values], (err, data) => {
-        if (err) return res.json(err)
-        return res.json("Added product to products.");
-    })
-
-});
 
 app.listen(8082, () => {
     console.log("Connected to backend!")
