@@ -8,7 +8,6 @@ import CartProducts from "./routes/CartProducts";
 import axios from 'axios';
 import { fakeProducts } from "../fakeProducts";
 import categories from './assets/categories.json'
-
 function App() {
   const [menuClass, setMenuClass] = useState("menu hidden");
   const [searchClass, setSearchClass] = useState("hidden");
@@ -35,26 +34,27 @@ function App() {
     }
     fetchProducts()
   }, []);
-
   const getCartGoing = (numb, price) => {
     numb--;
-    if (!carts[numb]) {
-      cartProduct.current = products[numb];
+    const updatedProduct = { ...products[numb] };
+    updatedProduct.incart += 1;
+    updatedProduct.amount -= 1;
+    cartProduct.current = updatedProduct;
+    if (!carts.some(product => product.id === updatedProduct.id)) {
       setCarts((prevCarts => [...prevCarts, cartProduct.current]));
       setCartHasProducts(true);
     }
     else {
-      console.log(carts);
-      //update number of this product in cart later
-      //carts needs total in cart that cannot be more than amount
+      const updatedCarts = carts.map(product => product.id === updatedProduct.id ? { ...product, incart: product.incart + 1, amount: product.amount - 1 } : product);
+      setCarts(updatedCarts);
     }
-    console.log(carts);
     updateTotal(price);
   }
+  //update number of this product in cart later
+  //carts needs total in cart that cannot be more than amount
   const updateTotal = (price) => {
     totalToModify.current = totalPrice;
     totalToModify.current += price;
-    console.log(totalToModify);
     setTotalPrice(totalToModify.current)
   }
   const updateMenu = () => {
@@ -78,7 +78,6 @@ function App() {
       setIsMenuClicked(false);
     }
   };
-
   const activateSearch = () => {
     if (!isSearchClicked) {
       setCartClass("hidden");
@@ -114,7 +113,6 @@ function App() {
       setIsCartClicked(false);
     }
   };
-
   const productsToShow = (category) => {
     categoryDisplay.current = category.id;
   }
@@ -132,6 +130,7 @@ function App() {
         carts={carts}
         CartProducts={CartProducts}
         totalPrice={totalPrice}
+        getCartGoing={getCartGoing}
       />,
       children: [
         {
@@ -142,20 +141,17 @@ function App() {
         },
         { path: '/black_tea', element: (<Products products={products} getCartGoing={getCartGoing} categoryDisplay={categoryDisplay} categoryName="Black tea" imageURL={categories[0].imageURL} updateTotal={updateTotal} />) },
         { path: '/green_tea', element: (<Products products={products} getCartGoing={getCartGoing} categoryDisplay={categoryDisplay} categoryName="Green tea" imageURL={categories[1].imageURL} updateTotal={updateTotal} />) },
-        { path: '/jasmin_tea' },
         { path: '/white_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="White tea" imageURL={categories[3].imageURL} updateTotal={updateTotal} />) },
         { path: '/herbal_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Herbal tea" imageURL={categories[4].imageURL} updateTotal={updateTotal} />) },
         { path: '/special_tea', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Special tea" imageURL={categories[5].imageURL} updateTotal={updateTotal} />) },
-        { path: '/teapots', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Teapots" imageURL={categories[6].imageURL} updateTotal={updateTotal} />) }
+        { path: '/teapots', element: (<Products products={products} categoryDisplay={categoryDisplay} getCartGoing={getCartGoing} categoryName="Teapots" imageURL={"https://images.unsplash.com/uploads/141156683569128f190a0/6efc090d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} updateTotal={updateTotal} />) }
       ]
     }
   ])
-
   return (
     <>
       <RouterProvider router={router} />
     </>
   );
 }
-
 export default App;

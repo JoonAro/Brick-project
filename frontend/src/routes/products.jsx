@@ -1,7 +1,6 @@
 import ProductCard from '../components/ProductCard';
 import CategoryHero from './CategoryHero';
 const Products = ({ categoryDisplay, categoryName, imageURL, products, getCartGoing, updateTotal }) => {
-
     return <>
         <CategoryHero imageURL={imageURL} categoryName={categoryName} />
         <div className="productHolder">
@@ -22,8 +21,6 @@ const Products = ({ categoryDisplay, categoryName, imageURL, products, getCartGo
                     />
                 ))}
         </div>
-
     </>
 }
-
 export default Products;

@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import categories from '../assets/categories.json'
 import Card from '../components/Card'
-
 const ProductCategories = ({ productsToShow }) => {
     return (
         <div className="categories-main-container">
@@ -22,5 +21,4 @@ const ProductCategories = ({ productsToShow }) => {
         </div>
     )
 }
-
 export default ProductCategories

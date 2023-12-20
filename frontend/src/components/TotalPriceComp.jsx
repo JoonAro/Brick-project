@@ -8,5 +8,4 @@ const TotalPriceComp = ({ totalPrice }) => {
         </div>
     )
 }
-
 export default TotalPriceComp

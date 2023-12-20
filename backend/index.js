@@ -44,6 +44,22 @@ app.post("/products", (req, res) => {
         req.body.weight,
         req.body.category_id,
     ];
+    app.put("/products/:id", (req, res) => {
+        const productId = req.params.id;
+        const q = "UPDATE products set amount = amount + 1, incart = incart - 1 where id = ?"
+        "UPDATE books SET `title` = ?, `desc` = ?, `price` = ?, `cover` = ? WHERE id = ?";
+
+        const values = [
+            req.body.amount,
+            req.body.incart,
+
+        ];
+
+        db.query(q, [...values, productId], (err, data) => {
+            if (err) return res.json(err);
+            return res.json("product status has been updated succesfully.");
+        })
+    });
 
     db.query(q, [values], (err, data) => {
         if (err) return res.json(err)

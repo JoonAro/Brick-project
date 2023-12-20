@@ -1,8 +1,7 @@
 import Search from "../components/Search";
 import HamburgerMenu from "../components/HamburgerMenu";
 import Cart from "../components/Cart";
-
-const Header = ({ updateMenu, activateSearch, searchClass, menuClass, activateCart, cartClass, categoryDisplay, overlayClass, carts, CartProducts, totalPrice }) => {
+const Header = ({ updateMenu, activateSearch, searchClass, menuClass, activateCart, cartClass, categoryDisplay, overlayClass, carts, CartProducts, totalPrice, getCartGoing }) => {
     return (
         <>
             <header className="header">
@@ -31,10 +30,10 @@ const Header = ({ updateMenu, activateSearch, searchClass, menuClass, activateCa
                 <div className="productInCartSignal"></div>
             </header>
             <Search searchClass={searchClass} />
-            <Cart cartClass={cartClass} CartProducts={CartProducts} carts={carts} totalPrice={totalPrice} />
+            <Cart cartClass={cartClass} CartProducts={CartProducts} carts={carts} totalPrice={totalPrice} getCartGoing={getCartGoing} />
             <HamburgerMenu menuClass={menuClass} categoryDisplay={categoryDisplay} />
+            <div id="lineBelowHeader"></div>
         </>
     )
 }
-
 export default Header;

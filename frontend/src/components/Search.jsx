@@ -7,5 +7,4 @@ const Search = ({ searchClass }) => {
     </>
   );
 };
-
 export default Search;

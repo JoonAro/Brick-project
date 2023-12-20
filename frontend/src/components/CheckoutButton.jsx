@@ -3,5 +3,4 @@ const CheckoutButton = () => {
         <div className="checkoutButton">Checkout</div>
     )
 }
-
 export default CheckoutButton
