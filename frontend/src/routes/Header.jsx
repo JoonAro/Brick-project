@@ -1,7 +1,8 @@
 import Search from "../components/Search";
 import HamburgerMenu from "../components/HamburgerMenu";
-
-const Header = ({ updateMenu, activateSearch, searchClass, menuClass, categoryDisplay, overlayClass }) => {
+import Cart from "../components/Cart";
+import { NavLink } from 'react-router-dom';
+const Header = ({ updateMenu, activateSearch, searchClass, menuClass, activateCart, cartClass, categoryDisplay, overlayClass, carts, CartProducts, totalPrice, getCartGoing }) => {
     return (
         <>
             <header className="header">
@@ -11,11 +12,14 @@ const Header = ({ updateMenu, activateSearch, searchClass, menuClass, categoryDi
                 ></div>
                 <div className="header-container">
                     {/* Placeholder logo */}
-                    <span className="material-symbols-outlined">
-                        emoji_food_beverage
-                    </span>
-                    <div className="icon-container">
+                    <NavLink to={'/'}>
                         <span className="material-symbols-outlined">
+                            emoji_food_beverage
+                        </span>
+                    </NavLink>
+                    <div className="icon-container">
+                        <span onClick={() => activateCart()} className="material-symbols-outlined">
+                            <div className="productInCartSignal"><div className={carts.length === 0 ? "" : "signal"}></div></div>
                             shopping_cart
                         </span>
                         <span onClick={() => activateSearch()} className="material-symbols-outlined">
@@ -26,11 +30,13 @@ const Header = ({ updateMenu, activateSearch, searchClass, menuClass, categoryDi
                         </span>
                     </div>
                 </div>
+                <div className="productInCartSignal"></div>
             </header>
             <Search searchClass={searchClass} />
+            <Cart cartClass={cartClass} CartProducts={CartProducts} carts={carts} totalPrice={totalPrice} getCartGoing={getCartGoing} />
             <HamburgerMenu menuClass={menuClass} categoryDisplay={categoryDisplay} />
+            <div id="lineBelowHeader"></div>
         </>
     )
 }
-
 export default Header;

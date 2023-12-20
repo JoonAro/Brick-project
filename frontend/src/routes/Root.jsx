@@ -1,7 +1,7 @@
 import Header from "./Header";
+import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
-
-const Root = ({ updateMenu, activateSearch, searchClass, menuClass, categoryDisplay, overlayClass }) => {
+const Root = ({ updateMenu, activateSearch, searchClass, menuClass, activateCart, cartClass, categoryDisplay, overlayClass, carts, CartProducts, totalPrice, getCartGoing }) => {
     return (
         <>
             <Header
@@ -9,12 +9,18 @@ const Root = ({ updateMenu, activateSearch, searchClass, menuClass, categoryDisp
                 activateSearch={activateSearch}
                 searchClass={searchClass}
                 menuClass={menuClass}
-                categoryDisplay={categoryDisplay} 
+                activateCart={activateCart}
+                cartClass={cartClass}
+                categoryDisplay={categoryDisplay}
                 overlayClass={overlayClass}
-                />
+                carts={carts}
+                CartProducts={CartProducts}
+                totalPrice={totalPrice}
+                getCartGoing={getCartGoing}
+            />
             <Outlet />
+            <Footer />
         </>
     )
 }
-
 export default Root
