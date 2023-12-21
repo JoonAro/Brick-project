@@ -6,7 +6,6 @@ import Home from "./routes/Home";
 import Products from "./routes/products";
 import CartProducts from "./routes/CartProducts";
 import axios from 'axios';
-import { fakeProducts } from "../fakeProducts";
 import categories from './assets/categories.json'
 function App() {
   const [menuClass, setMenuClass] = useState("menu hidden");
