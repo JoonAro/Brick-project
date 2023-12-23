@@ -1,4 +1,16 @@
 import "./App.css";
+import { useState } from "react";
+import Header from "./routes/Header";
+import Hero from "./routes/Hero";
+import Footer from "./routes/Footer";
+import HamburgerMenu from "./components/HamburgerMenu";
+import AddToCart from "./components/AddToCart";
+import Search from "./components/Search";
+import Card from "./components/Card";
+import PlusMinusButton from "./components/PlusminusButton";
+import ContactUs from "./components/Contactus";
+
+=======
 import { useState, useRef, useEffect } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import Root from "./routes/Root";
@@ -8,6 +20,7 @@ import CartProducts from "./routes/CartProducts";
 import axios from 'axios';
 import { fakeProducts } from "../fakeProducts";
 import categories from './assets/categories.json'
+
 function App() {
   const [menuClass, setMenuClass] = useState("menu hidden");
   const [searchClass, setSearchClass] = useState("hidden");

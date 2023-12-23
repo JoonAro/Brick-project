@@ -517,6 +517,61 @@ img.category-hero-img-container {
   line-height: normal;
   justify-content: right;
 }
+/*Contact Us*/
+.contact-us-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgb(216, 188, 163);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+div {
+  margin: 15px 0;
+}
+label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  margin-bottom: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+textarea {
+  margin-bottom: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button {
+  padding: 12px;
+  background-color: rgb(216, 188, 163);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+=======
 
 
 /* productCard*/
@@ -581,3 +636,4 @@ img.category-hero-img-container {
   border-radius: 50%;
   color: white;
 }
+
