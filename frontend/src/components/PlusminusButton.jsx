@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-
 export default function PlusMinusButton() {
   let [productcount, setCount] = useState(0);
-
   function incrementProduct() {
     productcount = productcount + 1;
     setCount(productcount);
