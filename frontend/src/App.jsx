@@ -8,6 +8,7 @@ import AddToCart from "./components/AddToCart";
 import Search from "./components/Search";
 import Card from "./components/Card";
 import PlusMinusButton from "./components/PlusminusButton";
+import ContactUs from "./components/Contactus";
 
 function App() {
   const [menuClass, setMenuClass] = useState("menu hidden");
